@@ -1,0 +1,68 @@
+<style>
+  .input{
+    width: 200px;
+  }
+
+   .inputSubmit{
+    width: 80px;
+    margin: 5px 480px 0px 0px ;
+  }
+  .userMessage{
+    height:20px;
+  }
+  .trainForm{
+    width:60%;
+  }
+
+</style>
+
+<h1>Training</h1>
+<div class="row ml-4">
+  <div class="form-group trainForm">
+    <form #trainingForm="ngForm" (ngSubmit)="onSubmit(trainingForm.value)">
+      <div class="row userMessage">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-7">
+          <label name="message" class="{{messageClass}}">{{ message }}</label>
+        </div>
+      </div>
+      <div class="row userMessage">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-7">
+          <label name="message" class="text-success">{{ daysMessage }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Training :</label>
+        </div>
+        <div class="col-md-3">
+          <input name="trainingName" [(ngModel)]="trainingName" class="input">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Start Date:</label>
+        </div>
+        <div class="col-md-3">
+          <input name="startDate" type="date" [(ngModel)]="startDate" class="input">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>End Date:</label>
+        </div>
+        <div class="col-md-3">
+          <input name="endDate" type="date" [(ngModel)]="endDate" class="input">
+        </div>
+      </div>
+      <div class="row float-right submitt-button">
+        <div class="">
+          <input type="submit" value="Save" class="btn-default submitt-button inputSubmit" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
